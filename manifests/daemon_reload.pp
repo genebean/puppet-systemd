@@ -49,7 +49,7 @@ define systemd::daemon_reload (
     }
 
     exec { $_title:
-      command     => $_command,
+      command     => $_command.join(' '),
       refreshonly => true,
       path        => $facts['path'],
     }
